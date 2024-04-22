@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import v.inc.brainconserver.service.auth.UserDetailsServiceInfo;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -24,7 +25,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "/",
+                                "/api/v1/auth/**",
                                 "/user/create").permitAll()
                         .anyRequest().authenticated())
                 .httpBasic(withDefaults())

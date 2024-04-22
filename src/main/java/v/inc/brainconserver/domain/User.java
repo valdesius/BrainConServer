@@ -1,10 +1,7 @@
 package v.inc.brainconserver.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
@@ -12,23 +9,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Table(name = "users")
+@Getter
 
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    @Column(nullable = false)
-    private String username;
+    private String first_name;
 
-    @Column(nullable = false)
+    private String last_name;
+
     private String email;
 
-    @Column(nullable = false)
     private String password;
-
-    @Column(nullable = false)
-    private String role;
 
 }
 

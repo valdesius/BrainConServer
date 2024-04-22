@@ -8,7 +8,7 @@ import v.inc.brainconserver.domain.User;
 import v.inc.brainconserver.repository.UserRepository;
 
 @RestController
-@RequestMapping
+@RequestMapping("api/v1/auth")
 public class UserController {
     @Autowired
     private UserRepository repository;
