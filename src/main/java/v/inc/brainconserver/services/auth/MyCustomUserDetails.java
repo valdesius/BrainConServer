@@ -1,21 +1,18 @@
-package v.inc.brainconserver.service.auth;
+package v.inc.brainconserver.services.auth;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import v.inc.brainconserver.domain.User;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
 
-public class UserDetailsInfo implements UserDetails {
+public class MyCustomUserDetails implements UserDetails {
 
     private User user;
 
-    public UserDetailsInfo(User user){
+    public MyCustomUserDetails(User user){
         this.user = user;
     }
 
@@ -25,7 +22,7 @@ public class UserDetailsInfo implements UserDetails {
     }
 
     public int getUserId(){
-        return this.user.getId();
+      return this.user.getUser_id();
     }
 
     public String getFirstName(){

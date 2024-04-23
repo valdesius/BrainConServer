@@ -1,35 +1,35 @@
 package v.inc.brainconserver.dto.responses;
 
-import lombok.NoArgsConstructor;
-import v.inc.brainconserver.service.auth.UserDetailsInfo;
-@NoArgsConstructor
-
+import v.inc.brainconserver.services.auth.MyCustomUserDetails;
 public class AuthResponse {
 
-    private UserDetailsInfo myCustomUserDetails;
+    private MyCustomUserDetails myCustomUserDetails;
     private String token;
 
-    public AuthResponse(String token, UserDetailsInfo myCustomUserDetails) {
+    public AuthResponse(){
+
+    }
+
+    public AuthResponse(String token, MyCustomUserDetails myCustomUserDetails){
         this.token = token;
         this.myCustomUserDetails = myCustomUserDetails;
     }
 
-    public int getUserId() {
+    public int getUserId(){
         return this.myCustomUserDetails.getUserId();
     }
 
-    public String getUsername() {
+    public String getUsername(){
         return this.myCustomUserDetails.getUsername();
     }
 
-    public String getFirstName() {
+    public String getFirstName(){
         return this.myCustomUserDetails.getFirstName();
     }
 
-    public String getLastName() {
+    public String getLastName(){
         return this.myCustomUserDetails.getLastName();
     }
-
     public String getToken() {
         return token;
     }
