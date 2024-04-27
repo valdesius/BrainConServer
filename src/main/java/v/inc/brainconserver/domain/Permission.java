@@ -12,9 +12,7 @@ public enum Permission {
     STUDENT_READ("student:read"),
     STUDENT_UPDATE("student:update"),
     STUDENT_CREATE("student:create"),
-    STUDENT_DELETE("student:delete")
-
-    ;
+    STUDENT_DELETE("student:delete");
 
     @Getter
     private final String permission;

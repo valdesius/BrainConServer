@@ -1,11 +1,23 @@
 package v.inc.brainconserver.dto.requests;
 
+import v.inc.brainconserver.domain.Role;
+
 public class UserSignUpRequest {
 
     private String first_name;
     private String last_name;
     private String email;
     private String password;
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    private Role role;
 
 
     public String getFirst_name() {

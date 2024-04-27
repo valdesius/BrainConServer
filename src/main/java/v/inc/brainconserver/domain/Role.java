@@ -13,7 +13,7 @@ import static v.inc.brainconserver.domain.Permission.*;
 
 @RequiredArgsConstructor
 public enum Role {
-    USER(Collections.EMPTY_SET),
+    USER(Collections.emptySet()),
     MENTOR(
             Set.of(
                     MENTOR_READ,
