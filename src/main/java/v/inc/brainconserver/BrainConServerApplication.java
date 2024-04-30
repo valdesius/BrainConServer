@@ -16,30 +16,6 @@ public class BrainConServerApplication {
         SpringApplication.run(BrainConServerApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner commandLineRunner(
-            AuthenticationService service
-    ) {
-        return args -> {
-            var admin = RegisterRequest.builder()
-                    .firstname("Adqfqin")
-                    .lastname("Adqwfwqmin")
-                    .email("awfdmin@mail.com")
-                    .password("pafwssword")
-                    .role(MENTOR)
-                    .build();
-            System.out.println("Admin token: " + service.register(admin).getAccessToken());
 
-            var manager = RegisterRequest.builder()
-                    .firstname("Awfwfdmin")
-                    .lastname("Adwfmin")
-                    .email("managewfr@mail.com")
-                    .password("paswfwsword")
-                    .role(STUDENT)
-                    .build();
-            System.out.println("Manager token: " + service.register(manager).getAccessToken());
-
-        };
-    }
 
 }

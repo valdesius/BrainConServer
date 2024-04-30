@@ -38,7 +38,7 @@ public class SecurityConfig {
         httpSecurity
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers( "/api/v1/index/**").permitAll()
+                .requestMatchers("/api/v1/auth/**").permitAll()
 
                 .requestMatchers("/api/v1/student/**").hasAnyRole(MENTOR.name(), STUDENT.name())
 
@@ -47,12 +47,6 @@ public class SecurityConfig {
                 .requestMatchers(PUT, "/api/v1/student/**").hasAnyAuthority(MENTOR_UPDATE.name(), STUDENT_UPDATE.name())
                 .requestMatchers(DELETE, "/api/v1/student/**").hasAnyAuthority(MENTOR_DELETE.name(), STUDENT_DELETE.name())
 
-                .requestMatchers("/api/v1/mentor/**").hasRole(MENTOR.name())
-
-                .requestMatchers(GET, "/api/v1/mentor/**").hasAuthority(MENTOR_READ.name())
-                .requestMatchers(POST, "/api/v1/mentor/**").hasAuthority(MENTOR_CREATE.name())
-                .requestMatchers(PUT, "/api/v1/mentor/**").hasAuthority(MENTOR_UPDATE.name())
-                .requestMatchers(DELETE, "/api/v1/mentor/**").hasAuthority(MENTOR_DELETE.name())
 
                 .anyRequest().authenticated()
                 .and()
