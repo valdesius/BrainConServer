@@ -1,6 +1,4 @@
-package v.inc.brainconserver.dto.requests;
-
-import v.inc.brainconserver.domain.Role;
+package com.braincon.dto.requests;
 
 public class UserSignUpRequest {
 
@@ -9,16 +7,11 @@ public class UserSignUpRequest {
     private String email;
     private String password;
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    private Role role;
-
+    /**
+     * --------------------------------
+     *  GETTERS AND SETTERS
+     * -------------------------------
+     * */
 
     public String getFirst_name() {
         return first_name;
@@ -52,3 +45,4 @@ public class UserSignUpRequest {
         this.password = password;
     }
 }
+// END OF USER SIGN UP REQUEST CLASS.

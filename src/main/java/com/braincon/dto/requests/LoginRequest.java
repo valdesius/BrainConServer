@@ -1,4 +1,4 @@
-package v.inc.brainconserver.dto.requests;
+package com.braincon.dto.requests;
 
 public class LoginRequest {
 
@@ -21,3 +21,4 @@ public class LoginRequest {
         this.password = password;
     }
 }
+// END OF LOGIN REQUEST CLASS.
