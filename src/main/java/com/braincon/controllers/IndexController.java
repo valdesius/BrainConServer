@@ -1,4 +1,4 @@
-package v.inc.brainconserver.controllers;
+package com.braincon.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,3 +16,4 @@ public class IndexController {
         return new ResponseEntity("Test Controller and method working", HttpStatus.OK);
     }
 }
+// END OF INDEX CONTROLLER CLASS.
